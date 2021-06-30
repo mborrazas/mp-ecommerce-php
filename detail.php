@@ -549,7 +549,7 @@ MercadoPago\SDK::setAccessToken('TEST-6660607320613134-011301-03d3d1b3159336d621
                                             <?php echo "$" . $_POST['unit'] ?>
                                         </h3>
                                     </div>
-                                    <div class="cho-container">
+                                    <div class="button-checkout">
                                     </div>
                                 </div>
                             </div>
@@ -579,6 +579,7 @@ MercadoPago\SDK::setAccessToken('TEST-6660607320613134-011301-03d3d1b3159336d621
     $preference->purpose = 'wallet_purchase';
     $preference->save();
     ?>
+    <script src="./script.js"></script>
     <script src="https://sdk.mercadopago.com/js/v2"></script>
     <script>
         const mp = new MercadoPago('TEST-110bb6ca-435f-44b2-8f47-46b60f411077', {

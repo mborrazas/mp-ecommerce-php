@@ -542,21 +542,19 @@
                                         </h3>
                                     </div>
                                     <button type="submit" class="mercadopago-button" formmethod="post">Pagar</button>
-
+                                    <div class="cho-container">
+                                    </div>
                                     <script>
-                                        // Agrega credenciales de SDK
                                         const mp = new MercadoPago('PUBLIC_KEY', {
                                             locale: 'es-AR'
                                         });
-
-                                        // Inicializa el checkout
                                         mp.checkout({
                                             preference: {
                                                 id: 'YOUR_PREFERENCE_ID'
                                             },
                                             render: {
-                                                container: '.cho-container', // Indica dónde se mostrará el botón de pago
-                                                label: 'Pagar', // Cambia el texto del botón de pago (opcional)
+                                                container: '.cho-container',
+                                                label: 'Pagar',
                                             }
                                         });
                                     </script>

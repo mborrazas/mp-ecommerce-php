@@ -544,21 +544,6 @@
                                     <button type="submit" class="mercadopago-button" formmethod="post">Pagar</button>
                                     <div class="cho-container">
                                     </div>
-                                    <script>
-                                        const mp = new MercadoPago('PUBLIC_KEY', {
-                                            locale: 'es-AR'
-                                        });
-                                        mp.checkout({
-                                            preference: {
-                                                id: 'YOUR_PREFERENCE_ID'
-                                            },
-                                            render: {
-                                                container: '.cho-container',
-                                                label: 'Pagar',
-                                            }
-                                        });
-                                    </script>
-
                                 </div>
                             </div>
                         </div>
@@ -577,6 +562,20 @@
 
     </div>
     <script src="https://sdk.mercadopago.com/js/v2"></script>
+    <script>
+        const mp = new MercadoPago('PUBLIC_KEY', {
+            locale: 'es-UY'
+        });
+        mp.checkout({
+            preference: {
+                id: 'YOUR_PREFERENCE_ID'
+            },
+            render: {
+                container: '.cho-container',
+                label: 'Pagar la compra',
+            }
+        });
+    </script>
 </body>
 
 </html>

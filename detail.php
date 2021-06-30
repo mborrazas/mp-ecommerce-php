@@ -578,6 +578,12 @@ MercadoPago\SDK::setAccessToken('APP_USR-6317427424180639-042414-47e969706991d3a
     $item->unit_price = 75;
     $preference->items = array($item);
     $preference->purpose = 'wallet_purchase';
+    $preference->back_urls = array(
+        "success" => "https://mborrazas-mp-ecommerce-php.herokuapp.com/success.php",
+        "failure" => "https://mborrazas-mp-ecommerce-php.herokuapp.com/failure.php",
+        "pending" => "https://mborrazas-mp-ecommerce-php.herokuapp.com/pending.php"
+    );
+    $preference->auto_return = "approved";
     $preference->save();
     ?>
     <script src="https://sdk.mercadopago.com/js/v2"></script>

@@ -1,5 +1,17 @@
 {
-    "name": "mp-ecommerce-php",
-    "type": "project",
-    "require": {}
+    "name": "matia/mp-ecommerce-php",
+    "autoload": {
+        "psr-4": {
+            "Matia\\MpEcommercePhp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Matias Borrazas",
+            "email": "borrazas.trabajo@gmail.com"
+        }
+    ],
+    "require": {
+        "mercadopago/dx-php": "^2.3"
+    }
 }

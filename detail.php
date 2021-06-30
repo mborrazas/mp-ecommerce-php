@@ -1,4 +1,3 @@
-
 <?php
 // SDK de Mercado Pago
 require __DIR__ .  '/vendor/autoload.php';
@@ -550,7 +549,6 @@ MercadoPago\SDK::setAccessToken('TEST-6660607320613134-011301-03d3d1b3159336d621
                                             <?php echo "$" . $_POST['unit'] ?>
                                         </h3>
                                     </div>
-                                    <button type="submit" class="mercadopago-button" formmethod="post">Pagar</button>
                                     <div class="cho-container">
                                     </div>
                                 </div>
@@ -573,8 +571,6 @@ MercadoPago\SDK::setAccessToken('TEST-6660607320613134-011301-03d3d1b3159336d621
     <?php
     // Crea un objeto de preferencia
     $preference = new MercadoPago\Preference();
-
-    // Crea un ítem en la preferencia
     $item = new MercadoPago\Item();
     $item->title = 'Mi producto';
     $item->quantity = 1;

@@ -570,6 +570,7 @@ MercadoPago\SDK::setAccessToken('TEST-6660607320613134-011301-03d3d1b3159336d621
     </div>
     <?php
     // Crea un objeto de preferencia
+    MercadoPago\SDK::setIntegratorId("dev_24c65fb163bf11ea96500242ac130004");
     $preference = new MercadoPago\Preference();
     $item = new MercadoPago\Item();
     $item->title = 'Mi producto';

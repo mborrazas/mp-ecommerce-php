@@ -1,3 +1,12 @@
+
+<?php
+// SDK de Mercado Pago
+require __DIR__ .  '/vendor/autoload.php';
+// Agrega credenciales
+MercadoPago\SDK::setAccessToken('TEST-6660607320613134-011301-03d3d1b3159336d6218c7ec7f4acd9f5__LD_LA__-147823178');
+
+
+?>
 <!DOCTYPE html>
 <html class="supports-animation supports-columns svg no-touch no-ie no-oldie no-ios supports-backdrop-filter as-mouseuser" lang="en-US">
 
@@ -561,18 +570,35 @@
         </div>
 
     </div>
+    <?php
+    // Crea un objeto de preferencia
+    $preference = new MercadoPago\Preference();
+
+    // Crea un ítem en la preferencia
+    $item = new MercadoPago\Item();
+    $item->title = 'Mi producto';
+    $item->quantity = 1;
+    $item->unit_price = 75;
+    $preference->items = array($item);
+    $preference->purpose = 'wallet_purchase';
+    $preference->save();
+    ?>
     <script src="https://sdk.mercadopago.com/js/v2"></script>
     <script>
-        const mp = new MercadoPago('PUBLIC_KEY', {
+        const mp = new MercadoPago('TEST-110bb6ca-435f-44b2-8f47-46b60f411077', {
             locale: 'es-UY'
         });
+
+        const preferenceId = "<?php echo $preference->id; ?>"
+
         mp.checkout({
             preference: {
-                id: 'YOUR_PREFERENCE_ID'
+                id: preferenceId
             },
             render: {
                 container: '.cho-container',
                 label: 'Pagar la compra',
+                type: 'wallet',
             }
         });
     </script>

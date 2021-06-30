@@ -573,29 +573,26 @@ MercadoPago\SDK::setAccessToken('APP_USR-6317427424180639-042414-47e969706991d3a
     MercadoPago\SDK::setIntegratorId("dev_24c65fb163bf11ea96500242ac130004");
     $preference = new MercadoPago\Preference();
     $payer = new MercadoPago\Payer();
-    $payer->name = "Charles";
-    $payer->surname = "Luevano";
+    $payer->name = "Lalo";
+    $payer->surname = "Landa";
     $payer->email = "charles@hotmail.com";
     $payer->date_created = "2018-06-02T12:58:41.425-04:00";
     $payer->phone = array(
-        "area_code" => "",
-        "number" => "949 128 866"
-    );
-
-    $payer->identification = array(
-        "type" => "DNI",
-        "number" => "12345678"
+        "area_code" => "11",
+        "number" => "22223333"
     );
 
     $payer->address = array(
-        "street_name" => "Cuesta Miguel Armendáriz",
-        "street_number" => 1004,
-        "zip_code" => "11020"
+        "street_name" => "Falsa",
+        "street_number" => 123,
+        "zip_code" => "1111"
     );
     $item = new MercadoPago\Item();
-    $item->title = 'Mi producto';
+    $item->title = $_POST['title'];
+    $item->id = "1234";
     $item->quantity = 1;
-    $item->unit_price = 75;
+    $item->unit_price = $_POST['price'];
+    $item->external_reference = "borrazas.trabajo@gmail.com";
     $preference->items = array($item);
     $preference->payer = $payer;
     $preference->purpose = 'wallet_purchase';

@@ -1,4 +1,4 @@
 <?php
 
 
-var_dump($_GET);die;
+echo json_encode($_GET);die;

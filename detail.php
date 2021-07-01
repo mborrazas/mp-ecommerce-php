@@ -596,6 +596,7 @@ MercadoPago\SDK::setAccessToken('APP_USR-6317427424180639-042414-47e969706991d3a
     $preference->items = array($item);
     $preference->external_reference = "borrazas.trabajo@gmail.com"; 
     $preference->payer = $payer;
+    $preference->notification_url = "https://mborrazas-mp-ecommerce-php.herokuapp.com/notifications.php";
     $preference->purpose = 'wallet_purchase';
     $preference->payment_methods = array(
         "excluded_payment_methods" => array(

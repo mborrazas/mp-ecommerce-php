@@ -575,7 +575,7 @@ MercadoPago\SDK::setAccessToken('APP_USR-6317427424180639-042414-47e969706991d3a
     $payer = new MercadoPago\Payer();
     $payer->name = "Lalo";
     $payer->surname = "Landa";
-    $payer->email = "charles@hotmail.com";
+    $payer->email = "test_user_63274575@testuser.com";
     $payer->date_created = "2018-06-02T12:58:41.425-04:00";
     $payer->phone = array(
         "area_code" => "11",
@@ -589,13 +589,23 @@ MercadoPago\SDK::setAccessToken('APP_USR-6317427424180639-042414-47e969706991d3a
     );
     $item = new MercadoPago\Item();
     $item->title = $_POST['title'];
+    $item->description = "Dispositivo móvil de Tienda e-commerce";
     $item->id = "1234";
     $item->quantity = 1;
     $item->unit_price = $_POST['price'];
-    $item->external_reference = "borrazas.trabajo@gmail.com";
     $preference->items = array($item);
+    $preference->external_reference = "borrazas.trabajo@gmail.com"; 
     $preference->payer = $payer;
     $preference->purpose = 'wallet_purchase';
+    $preference->payment_methods = array(
+        "excluded_payment_methods" => array(
+          array("id" => "amex")
+        ),
+        "excluded_payment_types" => array(
+          array("id" => "atm")
+        ),
+        "installments" => 6
+      );
     $preference->back_urls = array(
         "success" => "https://mborrazas-mp-ecommerce-php.herokuapp.com/success.php",
         "failure" => "https://mborrazas-mp-ecommerce-php.herokuapp.com/failure.php",
@@ -623,6 +633,7 @@ MercadoPago\SDK::setAccessToken('APP_USR-6317427424180639-042414-47e969706991d3a
             }
         });
     </script>
+    <script src="https://www.mercadopago.com/v2/security.js" view="checkout"></script>
 </body>
 
 </html>
